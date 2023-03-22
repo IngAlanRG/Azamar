@@ -1,17 +1,117 @@
+<!--Empezamos con la etiqueta que abre y cierra y 
+    también identifica que versión de html se esta implementando 
+-->
 <!DOCTYPE html>
+<!--Indica el tipo de lenguaje-->
 <html lang="en">
+<!--La etiqueta header es la cabeza del cuerpo de html lo que permite que cuando el archivo se carga en la red esto le indique al navegador
+que es lo que va a utilizar por ejemplo en mi caso estoy cargando estilos de Bootstrap 5 con un CDN -->
 <head>
+    <!--Este indica que tipo de caracteres va soportar este html sabemos que no todos los idiomas son lo mismo y alogar los
+    caracteres de todos los países en un archivo es pesado es por eso que se identifica el tipo 
+de caracteres que se van a ocupar -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--De una u otra forma esta parte permite que nuestro archivo sea responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Indica el titulo de la pestaña que se encuentra en el navegador-->
     <title>Document</title>
+    <!--Son los CDN que se están implementando de Bootstrap 5 esto para tener unos estilos y que sea mas sencillo  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <!--
+            Es el comienzo del script o la lógica de que es lo que va a realizar el html por así decirlo 
+        -->
     <script>
-        func
+        /*
+        Esta función se llama suma y no recibe parámetros de igual manera es invocada en el html posterior
+        mente se menciona donde se esta llamando
+        */
+        function sumar() {
+            /*
+            Las variables num1 y num2 están capturando los datos por medio de un elemento de nombre id 
+            el input contiene una propiedad de nombre id que después el javascript las obtiene por medio del 
+            value que captura los datos del input. La captura de datos esta siendo parseando para que los datos 
+            sean números y no los pase omo strings  
+            */
+            num1 = parseInt(document.getElementById("num1").value);
+            num2 = parseInt(document.getElementById("num2").value);
+            /*
+            Aquí no estamos capturando datos de echo es lo contrario los estamos pintando en un elemento de con la propiedad id 
+            y le estamos asignando la suma de los dos números
+            */
+            result = document.getElementById("res").innerHTML =num1 + num2
+        }
+        /*Termina el script*/
     </script>
+    <!--Iniciamos con los estilos para tener un diseño más atractivo -->
+    <style>
+        /*
+        Le indicamos al h1 que va tener un margen principal mente del lado de abajo y va estar centrado
+        */
+        h1{
+            text-align: center;
+            margin: 0px 0px 30px 0px;
+        }
+        /*
+        esta es para dar margen a todo el contenedor ya que se encuentra en un div y esto encapsula todo 
+        recordemos que html son como cajas 
+        */
+        .container-global {
+            margin: 5% 20%;
+            border: solid 1px blue;
+            border-radius: 20px;
+            padding: 15px 50px;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        /*
+        Estos estilos son para la caja especifica del resultado para remarcar bien 
+        en donde se encuentra 
+        */
+        .res{
+            box-sizing: border-box;
+            margin: 20px 0px 0px 0px;
+            border: 1px solid black;
+            color: rgb(8, 9, 10);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 2px 1px rgba(34, 37, 177, 0.2);
+        }
+    </style>
 </head>
+<!--Iniciamos con el cuerpo del html-->
 <body>
-<form action="">
-    <button onclick="sumar()">sumar</button>
-</form>
+    <!--Esté es el contenedor principal -->
+    <div class="container-global">
+        <!--Aquí indicamos el titulo de la página ojo con este que cuenta en el CEO-->
+        <h1>Suma de dos números</h1>
+        <!--Es la etiqueta para el formulario donde sucede la magia el action es una propiedad que redirection en este caso 
+        a ningún lado-->
+        <form action="#">
+            <!--Alguna de las clases son para el cdn de bootstrap la unica clase que no aplica es la de la global del div y la 
+            del resultado -->
+            <div class="mb-3">
+                <label for="num1" class="form-label">Numero 1</label><!--Label es el que indica que es lo que debe hacer le usuario-->
+                <input type="number" class="form-control" id="num1"><!--En los inputs es donde se genera la captura de datos esto para ser posible
+                le asignamos la propiedad id para que la función del script pueda capturar los datos aplica en el otro div-->
+            </div>
+            <div class="mb-3">
+                <label for="num2" class="form-label">Numero 2</label>
+                <input type="number" class="form-control" id="num2">
+            </div>
+            <div d-grid gap-1>
+                <!--en el evento onclick manda a llamar a la función suma sabemos que una función no se ejecuta si no se llama -->
+                <button onclick="sumar()" class="btn btn-primary btn-block">sumar</button>
+            </div>
+        </form>
+        <!--Este div es el que devuelve el resultado de la operación previo a la función -->
+        <div id="res" class="res"></div>
+
+        <!--Termina toda la operación y se cierra todas las etiquetas -->
+    </div>
 </body>
+
 </html>

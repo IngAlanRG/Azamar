@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplicacion</title>
+    <title>Multiplicación</title>
     <script>
+        /*
+        tenemos una función que que nos debe de arrojar las tablas de multiplicar de el dato que le estemos
+        mandando esto se logra con un for como sabemos la iteración empieza del cero a si asta que la 
+        condición termine esta lógica nos favorece por que no vamos a realizar una por una sino que vamos a 
+        multiplicar los valores que nos asigne el usuario con los de la iteración que lo genere el bucle
+        for 
+        */
         function multi(props){
             var props = parseInt(document.getElementById("num").value);
             for (let index = 0; index < 10; index++) {
+                /*
+                Esa forma de comillas nos permiten alojar variables con el signo de 
+                pesos y los brackets 
+                */
                 alert(`El ${props} * ${[index]} = ${props* [index]}`)
-                // res = props * [index];
-                // document.getElementById("res").innerHTML = res
             }
             
         }

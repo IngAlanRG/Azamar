@@ -1,0 +1,15 @@
+{
+  "name": "azamrcoe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Ejercicio5.js",
+  "scripts": {
+    "ej5": "nodemon Ejercicio5.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}

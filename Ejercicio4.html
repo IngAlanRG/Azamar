@@ -25,11 +25,23 @@
         }
     </style>
     <script>
-
+        /*
+        Esta función es para generar números aleatorios 
+        */
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
         }
-
+        /*
+        Como lla emos mencionado en las trabajos anteriores la etiquetas de html 
+        creo o considero que ya no es necesario estar mencionando creo más importante mencionar la lógica
+        de las funciones de javascript 
+        Esta función Esta pensada para generar el RGB de una persona aleatoria 
+        podemos observar que en un principio estamos haciendo la captura de los datos 
+        que vamos a requerir para poder continuar con la generación de RFC
+        como de alguna forma el docente no especifico como es que se van a alojar los datos 
+        y yo entendí que estos datos los desviamos de alojar en un arreglo decidí hacerlo de la manera mas 
+        compleja ya que solo bastaba con hacer una concatenación pero ya ni modo
+        */
         function createRFC() {
             var CpName = document.getElementById("nombre").value;
             var CaApellidoP = document.getElementById("apellidoP").value;
@@ -37,10 +49,30 @@
             var anio = document.getElementById("anio").value;
             var mes = document.getElementById("mes").value;
             var dia = document.getElementById("dia").value;
-
+            /*
+            estamos generando el arreglo, para beneficio a los programadores javascript no requiere de 
+            asignar la longitud de esté 
+            */
             arreglo = new Array();
+
+            /*Esta es la  variable que va a mostrar los datos a posterior a y es de tipo var al no asignar o 
+            definir de que tipo es se toma como determinado var  */
             salida = ""
+            /*
+            Mencionamos que js es débil mente timado bueno si no lo hicimos ahora lo hacemos 
+            js nos indica en las comparaciones de igualdad que si es de doble igualdad no importa si
+            esta posee mayúsculas o minúsculas con que se parezca es mas que suficiente y si ponemos 3 
+            símbolos de igualdad es de la forma mas estricta posible 
+            */
             if (CpName.substring(0, 1) == "a" || CpName.substring(0, 1) == "e" || CpName.substring(0, 1) == "i" || CpName.substring(0, 1) == "u") {
+                /*
+                lo siguiente es lo esencial estamos guardando de forma manual los datos que requerimos 
+                al usuario estos datos empiezan del cero o la posición cero para ser mas 
+                específicos
+                El método substring esta haciendo un corte de cadena para que obtengamos solo
+                ese valor que le indiquemos como parámetro que va del 0 a n a donde nosotros indiquemos donde 
+                cortar a si le hacemos con todos 
+                */
                 arreglo[0] = CpName.substring(0, 1);
                 arreglo[1] = CpName.substring(0, 1);
                 arreglo[2] = CaApellidoP.substring(0, 1);
@@ -50,7 +82,10 @@
                 arreglo[6] = dia;
                 arreglo[7] = getRandomInt(10);
                 arreglo[8] = getRandomInt(10);
-
+                /*
+                aquí  mostramos la salida de los datos con la variable que iniciamos en el principio del
+                código le asignamos el valor de los arreglos y iteramos del 0 a n 
+                */
                 salida =
                     [
                         arreglo[0],
@@ -65,6 +100,10 @@
                     ]
                 alert(salida)
             }
+            /*Lo que esta fuera del if es prácticamente la mis ma lógica solo 
+            que si son observadores se dieron cuenta que si el nombre inicia con una vocal 
+            va a proseguir con la siguiente vocal si no es vocal inicia con la letra principal
+            después con la siguiente letra */
             arreglo[0] = CpName.substring(0, 1);
             arreglo[1] = CpName.substring(0, 1);
             arreglo[2] = CaApellidoP.substring(0, 1);
@@ -101,7 +140,7 @@
             <input type="text" id="nombre" class="form-control">
         </div>
         <div class="md-3">
-            <label for="" class="form-label">Ingresa Apellido Pareno</label>
+            <label for="" class="form-label">Ingresa Apellido Paterno</label>
             <input type="text" id="apellidoP" class="form-control">
         </div>
         <div class="md-3">

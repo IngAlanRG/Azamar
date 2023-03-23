@@ -4,7 +4,8 @@
   "description": "",
   "main": "Ejercicio5.js",
   "scripts": {
-    "ej5": "nodemon Ejercicio5.js"
+    "ej5": "nodemon Ejercicio5.js",
+    "ej7": "nodemon Ejercicio7.js"
   },
   "keywords": [],
   "author": "",

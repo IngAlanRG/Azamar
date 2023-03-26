@@ -6,7 +6,9 @@
   "scripts": {
     "ej5": "nodemon Ejercicio5.js",
     "ej7": "nodemon Ejercicio7.js",
-    "ej8": "nodemon Ejercicio8.js"
+    "ej8": "nodemon Ejercicio8.js",
+    "tof": "nodemon EjercicioTypeof.js",
+    "sto": "nodemon SetTimeOut.js"
   },
   "keywords": [],
   "author": "",

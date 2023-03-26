@@ -33,7 +33,15 @@ function CreaMatriz(n, m) {
 }
 
 function Multiplicar () {
+	/**Sabemos qee una función no se inicializa si no se manda a llamar esta función se encuentra en el lado inferior
+	 * de el código 
+	 */
 	Inicializar ()
+
+	/**
+	 * este es un for anidado que contiene las iteraciones para proceder la multiplicaciones 
+	 * la variable marizRes aloja el resultado de la multiplicación  
+	 */
 	for (i=0; i < filaA; i++){
 		for (j=0; j < colB; j++){
 			for (k=0; k < colA; k++){
@@ -45,9 +53,16 @@ function Multiplicar () {
 
 function Mostrar () {
 	Cargar ()
-	
+	/**Esta función es para cargar los valores de el producto 
+	 * inicializamos la variable q para que esta no se genere como undefine 
+	 * que es la propiedad que le da el lenguaje por defecto 
+	 */
 	var q = 0;
-	
+	/**este for tiene como condición que mientras el valor iniciado de i en cero no cumpla
+	 * no sea mayor que la longitud de matrizRes.
+	 * como esto es una matriz debemos de hacer dos iteraciones, por que es una matriz no un arreglo 
+	 * entonces declaramos dos for que contenga i para la primera iteración y j para la segunda 
+	 */
 	for (i=0; i < matrizRes.length; i++){
 		for (j=0; j < matrizRes.length; j++){
 			document.matrizR.elements[q].value = matrizRes[i][j];
@@ -57,7 +72,6 @@ function Mostrar () {
 	}
 }
 
-//Esta función recoge los datos del formulario y los guarda en las matrices
 function Cargar () {
 	var q = 0;
 

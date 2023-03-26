@@ -1,5 +1,4 @@
-
-//CÓDIGO JAVASCRIPT
+/**Declaramos las variables y esto lo hacemos con un alcance más externo en cualquier scop  */
 
 var matriz1;
 var matriz2;
@@ -9,16 +8,27 @@ var colA;
 var filaB;
 var colB;
 var contador = 0;
-//contador cuenta las veces que se accede, para que si no es la primera, se borren las capas creadas previamente.
 
-//FUNCIONCES QUE DEBEMOS DEFINIR PARA CREAR LAS MATRICES
-
+/**Ok tenemos esta función que recibe dos parámetros uno es para filas 
+ * y el otro es para columnas 
+ */
 function CreaMatriz(n, m) {
-	//DEFINIMOS EL TAMAÑO DE LA MATRIZ
+	/**Estamos extrayendo la longitud de la variable n  */
 	this.length = n;
+	/**Este for se cumple hasta que i cumpla con la longitud que emos establecido desde un principio de n 
+	 * la variable i a en aumento 
+	 */
 	for (var i=0; i<n; i++) {
+		/**
+		 * El resultado lo estamos capturando en un arreglo que tiene como parámetro a m que se a establecido en un inicio
+		 * de la función 
+		 */
 		this[i] = new Array(m);
 	}
+	/**
+	 * Como todo lo estamos capturando con this que este es un objeto lo retornamos como 
+	 * valor 
+	 */
 	return this;
 }
 
@@ -155,7 +165,7 @@ function CrearFormRes (filaA, colB) {
 	var res = document.createTextNode("Matriz Resultante");
 	capa.setAttribute("id", "resultado");
 	capa.setAttribute("align", "center");
-	capa.setAttribute("style", "width: 50%; height: 100%; float:right; background-color: 20B2AA");
+	capa.setAttribute("style", "width: 50%; height: 100%; float:right; background-color: #D6EAF8");
 	fRes.setAttribute("name", "matrizR");
 	
 	for (i=0; i<filaA; i++) {

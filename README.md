@@ -14,6 +14,4 @@ correr los scripts
 
 > npm i 
 
-una vez que haya visualizado 
-
-
+una vez que haya visualizado que proyecto va a correr solo de npm run y el nombre del archivo
